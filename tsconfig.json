@@ -5,6 +5,10 @@
     "module": "Node16",
     "sourceMap": true,
     "outDir": "dist",
-    "esModuleInterop": true
-  }
+    "esModuleInterop":true,
+  
+  },
+  "include": [
+    "**/*.ts"
+  ]
 }

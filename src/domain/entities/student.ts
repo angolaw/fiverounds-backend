@@ -24,6 +24,8 @@ export const studentSchema = z.object({
     degree: z.nativeEnum(Stripes),
     age: z.number().min(18),
     gender: z.enum(["male", "female", "not specified"])
+}).refine((schema) => {
+  schema.belt === Belt.BLACK || schema.degree <= Stripes.Four
 })
 
 
