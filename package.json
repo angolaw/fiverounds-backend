@@ -7,13 +7,15 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
+    "test": "vitest",
     "start": "node dist/server.js"
   },
   "author": "Google LLC",
   "license": "Apache-2.0",
   "dependencies": {
-    "express": "^4.19.2",
-    "fastify": "^5.1.0"
+    "fastify": "^5.1.0",
+    "vitest": "^2.1.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",

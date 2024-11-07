@@ -1,12 +1,45 @@
-import express from 'express';
-const app = express();
+import Fastify, { FastifyRequest } from "fastify"
+import { Student, studentSchema } from "./domain/entities/student"
+import { randomUUID } from "crypto"
 
-app.get('/', (req, res) => {
-  const name = process.env.NAME || 'World';
-  res.send(`Hello ${name}!`);
-});
+var students = []
 
-const port = parseInt(process.env.PORT || '3000');
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
-});
+const app = Fastify({
+  logger: true
+})
+
+app.get("/", async ()=>{
+  return {"msg": "Hello world"}
+})
+
+//! student routes
+app.get("/students", async ()=>{
+  // fetch students from DB
+})
+
+app.get("/students/:id", async (request, response)=>{
+  //fetch student by id
+  console.log(students.length);
+  
+  const {id} = request.query as {id: string}
+  console.info(id)
+  const found = students.filter((student)=>student.id == id)
+  console.log(found)
+})
+
+app.post("/students/create", async (request, response)=>{
+  //create student
+  const data = request.body
+  const student = studentSchema.parse(data)
+  student.id = randomUUID()
+  students.push(student)
+  console.log(student)
+})
+
+
+
+app.listen({
+  port: 3000
+})
+
+
