@@ -3,7 +3,9 @@ export enum Belt {
     BLUE=2,
     PURPLE=3,
     BROWN=4,
-    BLACK=5
+    BLACK=5,
+    RED_AND_BLACK=6,
+    
 
 
 }

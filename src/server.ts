@@ -32,8 +32,12 @@ app.post("/students/create", async (request, reply)=>{
   const data = request.body
   console.log(data);
   
-  const student = studentSchema.parse(data)  
-  console.log(JSON.stringify(student));
+  const student = studentSchema.parse(data)
+  if(student){
+    student.id = randomUUID()
+  }
+  reply.send(JSON.stringify(student))
+
   
 })
 
