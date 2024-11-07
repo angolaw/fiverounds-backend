@@ -1,13 +1,13 @@
 export enum Belt {
-    WHITE="white",
-    BLUE="blue",
-    PURPLE="purple",
-    BROWN="brown",
-    BLACK="black"
+    WHITE=1,
+    BLUE=2,
+    PURPLE=3,
+    BROWN=4,
+    BLACK=5
 
 
 }
-export function getBeltFromValue(value: string){
+export function getBeltFromValue(value: number){
     const entry = Object.entries(Belt).find(([key, val]) => val === value);
     return entry ? entry[1] : null
     

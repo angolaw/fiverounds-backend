@@ -27,13 +27,14 @@ app.get("/students/:id", async (request, response)=>{
   console.log(found)
 })
 
-app.post("/students/create", async (request, response)=>{
+app.post("/students/create", async (request, reply)=>{
   //create student
   const data = request.body
-  const student = studentSchema.parse(data)
-  student.id = randomUUID()
-  students.push(student)
-  console.log(student)
+  console.log(data);
+  
+  const student = studentSchema.parse(data)  
+  console.log(JSON.stringify(student));
+  
 })
 
 
