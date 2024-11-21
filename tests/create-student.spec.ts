@@ -1,10 +1,10 @@
 import {expect, test} from 'vitest'
 
-import { Gender, Student, studentSchema } from '../src/domain/entities/student'
-import { Belt, getBeltFromValue } from '../src/domain/entities/enums/belts'
-import { getStripesFromValue, Stripes } from '../src/domain/entities/enums/stripes'
+import { Gender, Student } from '../src/domain/entities/student'
+import { Belt } from '../src/domain/entities/enums/belts'
+import {  Stripes } from '../src/domain/entities/enums/stripes'
 import { ZodError } from 'zod'
-import { log } from 'console'
+import { studentSchema } from '../src/domain/entities/schemas/studentSchema'
 
 test("should create a user", ()=>{
     const studentData = {

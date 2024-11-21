@@ -26,22 +26,7 @@ export class Student {
         this.gender = gender
     }
 }
-export const studentSchema = z.object({
-    name: z.string().min(1),
-    id: z.string().nullable().default(null),
-    belt: z.nativeEnum(Belt),
-    degree: z.nativeEnum(Stripes),
-    age: z.number(),
-    gender: z.nativeEnum(Gender)
-}).refine(
-    (student) => student.belt === Belt.BLACK || student.degree <=4,
-{
-    message: "Non black students can have a maximum of four stripes",
-    path: ["stripes"]
-}
 
-
-)
 
 
 

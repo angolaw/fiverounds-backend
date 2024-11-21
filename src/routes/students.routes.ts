@@ -1,6 +1,7 @@
 import { FastifyInstance } from "fastify";
 import { randomUUID } from "node:crypto";
-import { studentSchema } from "../domain/entities/student";
+import { studentSchema } from "../domain/entities/schemas/studentSchema";
+
 
 export async function studentsRoutes(app: FastifyInstance){
  var students = []
