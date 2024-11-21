@@ -30,7 +30,7 @@ test("should not create a user with invalid data",()=>{
         "name": "John Doe",
           "belt": Belt.WHITE,
           "degree": 2,
-          "age": "28",
+          "age": undefined,
         "gender": "male"
         
       }
