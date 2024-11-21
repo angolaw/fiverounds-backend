@@ -6,8 +6,9 @@ import { studentSchema } from "../domain/entities/schemas/studentSchema";
 export async function studentsRoutes(app: FastifyInstance){
  var students = []
 //! student routes
-app.get("/students", async ()=>{
+app.get("/students", async (request, response)=>{
     // fetch students from DB
+    response.send(JSON.stringify({'msg': "Endpoint reached"}))
   })
   
   app.get("/students/:id", async (request, response)=>{

@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyRequest } from "fastify";
 
 export async function classesRoutes(app: FastifyInstance){
-    app.get("/classes", async (request, response)=>{
+    app.get("/classes/", async (request, response)=>{
         response.send({"classes":[
             {
               name: "Foundations of BJJ: Mastering the Basics",
